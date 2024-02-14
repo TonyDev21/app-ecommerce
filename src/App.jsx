@@ -1,11 +1,12 @@
+import { API_URL } from "../env"
 
 
-function App() {
+const App = () => {
 
 
   return (
     <>
-     <h1>Hellow</h1>
+     <h1>Hellow {API_URL} </h1>
     </>
   )
 }
