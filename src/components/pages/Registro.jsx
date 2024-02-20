@@ -32,8 +32,16 @@ const Registro = () => {
 
     return (
         <>
-            <LoginTemplate title="Registro">
-            <form onSubmit={handletSubmit}>
+             <LoginTemplate title="Regístrate">
+                <form onSubmit={handletSubmit}>
+                    <div className="mb-4">
+                    <input
+                        type="text"
+                        placeholder="Nombre completo"
+                        name="fullname"
+                        required
+                    />
+                    </div>
                     <div className="mb-4">
                     <input
                         type="email"
@@ -52,15 +60,15 @@ const Registro = () => {
                     </div>
                     <div className="text-center pt-1 mb-12 pb-1">
                     <button className="bg-gradient w-full" type="submit">
-                        Ingresar
+                        Crear cuenta
                     </button>
-                    <Link className="text-gray-500" to="/registro">
-                        ¿Deseas registrarte?
+                    <Link className="text-gray-500" to="/login">
+                        ¿Ya tienes cuenta? Inicia sesión
                     </Link>
                     </div>
                     {error && (
                     <p className="text-center p-2 bg-red-100 text-red-800">
-                        {error?.response?.data?.data}
+                        {error?.response?.data.errors[0].message}
                     </p>
                     )}
                 </form>
